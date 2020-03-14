@@ -31,7 +31,6 @@ function setErrorLogging(){
     ini_set('error_log',  LOGS . '/error_log.php');
 }
 
-
 function render($template, $data = null) {
     if ( $data ) {
         extract($data);
@@ -39,20 +38,6 @@ function render($template, $data = null) {
     $template .= '.php';
     include VIEWS."/layouts/app.php";  
 }
-
-// function conf($mix)
-// {
-//     $url = CONFIG."/".$mix.".json";
-  
-//     if (file_exists($url)) { 
-//         $jsonFile = file_get_contents($url);
-//         return json_decode($jsonFile, TRUE);
-//     } else { 
-//         echo "The file $url does not exists";
-//         return false;
-//     }
-// }
-
 
 function conf($mix) {
     $url = CONFIG."/".$mix.".json";

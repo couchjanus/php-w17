@@ -4,19 +4,11 @@
         <div class="row">
 
             <div class="col">
-            
-                <?php
-                // if(isset($_POST["name"])){
-                //     echo "<p>Hi, " . $_POST["name"] . "</p>";
-                // }
-                ?>
-
-                <!-- <form method="POST" action="/contact">
-                    <label for="inputName">Name:</label>
-                    <input type="text" name="name" id="inputName">
-                    <input type="submit" value="Submit">
-                </form> -->
-
+                <?php if (isset($error)):?>
+                    <div class="alert alert-danger" role="alert">
+                        Ошибка <?= $error;?> Please try again!
+                    </div>
+                <?php endif;?>
 
                 <div class="card">
                     <div class="card-header bg-primary text-white"><i class="fa fa-envelope"></i> Leave Your Message.
@@ -32,8 +24,7 @@
                                 <label for="email">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email"
                                     aria-describedby="emailHelp" placeholder="Enter email" required>
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small>
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
@@ -73,15 +64,15 @@
                 </div>
                 <div class="card-body">
                 <?php
-                // if (isset($comments)):
-                //     printf("<h2>There Are %d Comments In Guest Book</h2>", count($comments));       
-                //     foreach ($comments as $key => $value) {
-                //         echo("<div class='top'><b>User ".$value[0]." </b> <a href='mailto:".$value[1]."'>".$value[1]."</a>  Added this: </div><div class='comment'>".strip_tags($value[2])."</div>"."<p>At ".strip_tags($value[3])."</p><hr>");
-                //     }
-                // else:
-                //     printf("<h2 style='color: #%x%x%x'>No Comments Yet...</h2>", 165, 27, 45);
+                if (isset($comments) and count($comments)>0):
+                    printf("<h2>There Are %d Comments In Guest Book</h2>", count($comments));       
+                    foreach ($comments as $value) {
+                        echo("<div class='top'><b>User ".$value['username']." </b> <a href='mailto:".$value['email']."'>".$value['email']."</a>  Added this: </div><div class='comment'>".strip_tags($value['message'])."</div>"."<p>At ".strip_tags($value['created_at'])."</p><hr>");
+                    }
+                else:
+                    printf("<h2 style='color: #%x%x%x'>No Comments Yet...</h2>", 165, 27, 45);
 
-                // endif;
+                endif;
                 ?>
                 </div>
             </div>
