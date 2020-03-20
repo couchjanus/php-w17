@@ -1,23 +1,40 @@
 <?php
 
-render('home/index', array(
-    'title' => 'Home Page'
-));
-
-
 // HomeController.php
 
-// class HomeController
-// {
-//     // Class properties and methods go here   
-//     public function __construct()
+// class HomeController {
+//     public function index()
 //     {
-//         render('home/index', ['title'=>'<b>Our Cats</b> Members Home Page']);
+//         $title = 'Our Best Cats Members Home Page';
+//         $this->render('home/index', compact('title'));
 //     }
 
-//     // public function index()
-//     // {
-//     //   $title = 'Our <b>Best Cat Members Home Page </b>';
-// 		//   render('home/index', ['title'=>$title]);
-//     // }
+//     public function render($template, $data = null, $layout='app') 
+//     {
+//         if ( !empty($data) ) {  extract($data); }
+//         $template .= '.php';
+//         return require VIEWS."/layouts/${layout}.php";
+//     }
 // }
+
+// require_once VENDOR.'/framework/View.php';
+
+// class HomeController extends View
+// {
+//     public function index()
+//     {
+//         $title = 'Our Best Cats Members Home Page';
+//         $this->render('home/index', compact('title'));
+//     }
+// }
+
+require_once VENDOR.'/framework/Controller.php';
+
+class HomeController extends Controller
+{
+   public function index()
+   {
+       $title = 'Our Best Cats Members Home Page';
+       $this->view->render('home/index', compact('title'));
+   }
+}

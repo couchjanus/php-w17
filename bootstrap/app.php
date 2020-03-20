@@ -31,28 +31,33 @@ function setErrorLogging(){
     ini_set('error_log',  LOGS . '/error_log.php');
 }
 
-function render($template, $data = null) {
-    if ( $data ) {
-        extract($data);
-    }
-    $template .= '.php';
-    include VIEWS."/layouts/app.php";  
+// function render($template, $data = null) {
+//     if ( $data ) {
+//         extract($data);
+//     }
+//     $template .= '.php';
+//     include VIEWS."/layouts/app.php";  
+// }
+
+function render($template, $data = null, $layout='app') 
+{
+	if ( !empty($data) ) {
+		extract($data);
+	}
+	$template .= '.php';
+	require VIEWS."/layouts/${layout}.php";
 }
 
 function conf($mix) {
     $url = CONFIG."/".$mix.".json";
     try{
-        //Attempt to open json file.
         $jsonFile = file_get_contents($url);
-        //If fopen returns a boolean FALSE value, then an error has occurred.
         if($jsonFile === false){
             throw new Exception('Could not open json file!');
         }
         return json_decode($jsonFile, TRUE);
     } 
-    //CATCH the exception if something goes wrong.
     catch (Exception $ex) {
-        //Print out the exception message.
         echo $ex->getMessage();
         return false;
     }

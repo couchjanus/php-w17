@@ -1,17 +1,11 @@
 <?php
 // AboutController.php
-
-class AboutController
+require_once VENDOR.'/framework/Controller.php';
+class AboutController extends Controller
 {
-    // Class properties and methods go here   
-    // public function __construct()
-    // {
-    //     render('about/index', ['title'=>'About <b>Our Cats</b> Members']);
-    // }
-
-    public function index()
-    {
-        $title = 'About <b>Our Cats</b> Members';
-        render('about/index', ['title'=>$title]);
-    }
+   public function index()
+   {
+       $title = 'About Our Cats Members';
+       $this->view->render('about/index', compact('title'));
+   }
 }
