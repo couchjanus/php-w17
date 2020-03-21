@@ -18,3 +18,4 @@ const LOGS = ROOT.DIRECTORY_SEPARATOR.'logs';
 const EXT = '.php';
 const APPNAME = 'Great Shopaholic';
 const SLOGAN = "Let's Build Cool Site";
+define('DB_CONFIG_FILE', CONFIG.'/db.php');

@@ -279,3 +279,19 @@ Stack trace:
 #3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
 #4 {main}
   thrown in /home/janus/www/php-w17/app/Controllers/AboutController.php on line 4
+[21-Mar-2020 15:30:29 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Category' not found in /home/janus/www/php-w17/app/Controllers/Admin/CategoryController.php:156
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(54): CategoryController->index()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(63): initController()
+#2 /home/janus/www/php-w17/bootstrap/app.php(69): require_once('/home/janus/www...')
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/Admin/CategoryController.php on line 156
+[21-Mar-2020 15:33:08 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Helper' not found in /home/janus/www/php-w17/app/Controllers/Admin/CategoryController.php:178
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(54): CategoryController->create()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(63): initController()
+#2 /home/janus/www/php-w17/bootstrap/app.php(69): require_once('/home/janus/www...')
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/Admin/CategoryController.php on line 178
