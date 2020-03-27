@@ -2,8 +2,8 @@
 
 require_once VENDOR.'/framework/Model.php';
 
-class Category extends Model
+class Brand extends Model
 {
-    protected static $table = 'categories';
+    protected static $table = 'brands';
     protected static $primaryKey = 'id';
 }

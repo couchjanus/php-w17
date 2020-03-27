@@ -18,6 +18,8 @@
     </div>
 
     <div class="overlay"></div>
+    <?php require_once VIEWS.'/layouts/partials/_templates.php'; ?>
+
 
     <script src="/assets/js/main.js"></script>
 </body>

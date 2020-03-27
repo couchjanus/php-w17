@@ -9,29 +9,6 @@
  * @author     Janus Nic <couchjanus@gmail.com>
  */
 
-// class View {
-
-//     /**
-//      * Renders and returns output for the given file with its array of data.
-//      *
-//      * @param  string  $template
-//      * @param  string  $layout
-//      * @param  array   $data
-//      * @return string  Rendered output
-//      *
-//      */
-        
-//     public function render($template, $data = null, $layout='app', $error = false)
-//     {
-//         if(!empty($data)) {
-//             extract($data);
-//         }
-        
-//         $template .= '.php';
-//         return require VIEWS."/layouts/${layout}.php";
-//     }
-// } 
-
 require_once VENDOR.'/framework/Controller.php';
 
 class View {
@@ -49,8 +26,18 @@ class View {
      */
     public function __construct(Controller $controller){
         $this->controller = $controller;
-     }
+    }
 
+    private function render_template($data, $layout, $template ){
+		ob_start();
+        
+        if(!empty($data)) {
+            extract($data);
+        }
+        
+        include_once VIEWS."/layouts/${layout}.php";
+		return ob_get_clean();
+	}
 
     /**
      * Renders and returns output for the given file with its array of data.
@@ -64,11 +51,14 @@ class View {
         
     public function render($template, $data = null, $layout='app', $error = false)
     {
-        if(!empty($data)) {
-            extract($data);
-        }
         $template .= '.php';
-        $rendered = require_once VIEWS."/layouts/${layout}.php";
+        
+        if ( file_exists(VIEWS."/".$template) ) {
+            $rendered = $this->render_template($data, $layout, $template);
+        } else {
+            throw new Exception('You need to set the app template.');
+        }
+
         $this->controller->response->setContent($rendered);
         return $rendered;
     }
