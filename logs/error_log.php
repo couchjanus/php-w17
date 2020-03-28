@@ -467,3 +467,15 @@ Stack trace:
 #3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
 #4 {main}
   thrown in /home/janus/www/php-w17/app/Controllers/Admin/ProductController.php on line 96
+[28-Mar-2020 20:02:09 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/janus/www/php-w17/bootstrap/app.php:56
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 56
+[28-Mar-2020 21:06:52 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function index() on string in /home/janus/www/php-w17/vendor/framework/Router.php:50
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(57): Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 50

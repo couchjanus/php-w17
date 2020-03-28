@@ -6,6 +6,7 @@ require_once MODELS.'/Category.php';
 require_once MODELS.'/Product.php';
 require_once MODELS.'/Brand.php';
 require_once MODELS.'/Picture.php';
+require_once VENDOR.'/framework/Slug.php';
 
 class ProductController extends Controller
 {
@@ -38,6 +39,7 @@ class ProductController extends Controller
         if (isset($_POST) and !empty($_POST)) {
             $product = new Product();
             $product->name = $this->sanitizeInput($_POST['name']);
+            $product->slug = Slug::makeSlug($product->name, array('transliterate' => true));
             $product->status = (int)isset($_POST['status']);
             $product->price = $this->sanitizeInput($_POST['price']);
             
