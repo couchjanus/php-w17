@@ -18,6 +18,25 @@ return [
    'admin/products' => 'Admin\ProductController@index',
    'admin/products/create' => 'Admin\ProductController@create',
 
+   'admin/roles' => 'Admin\RoleController@index',
+   'admin/roles/create' => 'Admin\RoleController@create',
+   'admin/roles/edit/{id}' => 'Admin\RoleController@edit',
+   'admin/roles/delete/{id}' => 'Admin\RoleController@delete',
+
+   'admin/users' => 'Admin\UserController@index',
+   'admin/users/create' => 'Admin\UserController@create',
+   'admin/users/edit/{id}' => 'Admin\UserController@edit',
+   'admin/users/delete/{id}' => 'Admin\UserController@delete',
+
+   'register' => 'AuthController@signup',
+   'login' => 'AuthController@signin',
+   'logout' => 'AuthController@logout',
+   'profile' => 'ProfileController@index',
+
+   'profile/orders' => 'ProfileController@ordersList',
+   'profile/orders/view/{id}' => 'ProfileController@ordersView',
+   'profile/orders/edit/{id}' => 'ProfileController@ordersEdit',
+   'profile/orders/delete/{id}' => 'ProfileController@ordersDelete',
 
    'api/shop' => 'HomeController@getProducts',
    'api/shop/{id}' => 'HomeController@getProduct',

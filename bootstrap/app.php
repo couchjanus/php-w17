@@ -3,7 +3,6 @@
 require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config').DIRECTORY_SEPARATOR.'app.php';
 
 function init() {
-
     // Устанавливаем временную зону по умолчанию
     if (function_exists('date_default_timezone_set')) {
         date_default_timezone_set('Europe/Kiev');   
@@ -12,7 +11,6 @@ function init() {
     setlocale(LC_ALL, '');
     // Установка ukraine локали
     setlocale(LC_ALL, 'uk_UA');
-    
 }
 
 /**
@@ -50,6 +48,36 @@ function conf($mix) {
 setErrorLogging();
 init();
 
+// coockies
+
+// setcookie("name", 'Anonymouse');
+// setcookie("TestCookie", $value, time()+3600);  /* срок действия 1 час */
+
+// Вывести одно конкретное значение cookie
+// echo $_COOKIE["name"];
+
+// echo 'Привет, ' . htmlspecialchars($_COOKIE["name"]) . '!';
+// Вывод всех cookie
+// print_r($_COOKIE);
+
+
+// setcookie("TestCookie", $value, time()+3600, "/~rasmus/", "example.com", 1);
+
+// Calculate 60 days in the future
+// seconds * minutes * hours * days + current time
+
+// $inTwoMonths = 60 * 60 * 24 * 60 + time(); 
+// setcookie('lastVisit', date("G:i - m/d/y"), $inTwoMonths);
+
+// if(isset($_COOKIE['lastVisit'])) {
+//     $visit = $_COOKIE['lastVisit'];
+//     echo "Your last visit was - ". $visit;
+// } else
+// 	echo "You've got some stale cookies!";
+
+
+// echo session_name();
+require_once VENDOR.'/framework/Helper.php';
 require_once VENDOR.'/framework/Request.php';
 require_once VENDOR.'/framework/Router.php';
 

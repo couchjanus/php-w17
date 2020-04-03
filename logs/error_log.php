@@ -479,3 +479,119 @@ Stack trace:
 #2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
 #3 {main}
   thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 50
+[02-Apr-2020 15:18:30 Europe/Kiev] PHP Notice:  Undefined index: name in /home/janus/www/php-w17/bootstrap/app.php on line 57
+[02-Apr-2020 15:18:30 Europe/Kiev] PHP Notice:  Undefined index: name in /home/janus/www/php-w17/bootstrap/app.php on line 59
+[02-Apr-2020 15:51:05 Europe/Kiev] PHP Notice:  Undefined variable: visit in /home/janus/www/php-w17/bootstrap/app.php on line 76
+[02-Apr-2020 20:10:56 Europe/Kiev] PHP Notice:  Undefined offset: 404 in /home/janus/www/php-w17/vendor/framework/Router.php on line 23
+[02-Apr-2020 20:10:56 Europe/Kiev] PHP Notice:  Undefined offset: 1 in /home/janus/www/php-w17/vendor/framework/Router.php on line 29
+[02-Apr-2020 20:10:56 Europe/Kiev] PHP Fatal error:  Uncaught Error: Method name must be a string in /home/janus/www/php-w17/vendor/framework/Router.php:50
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(23): Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 50
+[02-Apr-2020 20:12:38 Europe/Kiev] PHP Notice:  Undefined offset: 404 in /home/janus/www/php-w17/vendor/framework/Router.php on line 23
+[02-Apr-2020 20:12:38 Europe/Kiev] PHP Notice:  Undefined offset: 1 in /home/janus/www/php-w17/vendor/framework/Router.php on line 29
+[02-Apr-2020 20:12:38 Europe/Kiev] PHP Fatal error:  Uncaught Error: Method name must be a string in /home/janus/www/php-w17/vendor/framework/Router.php:50
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(23): Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 50
+[02-Apr-2020 20:13:20 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Model' not found in /home/janus/www/php-w17/app/Models/Role.php:6
+Stack trace:
+#0 /home/janus/www/php-w17/app/Controllers/Admin/RoleController.php(6): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#3 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#4 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-w17/app/Models/Role.php on line 6
+[02-Apr-2020 20:14:01 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Controller' not found in /home/janus/www/php-w17/app/Controllers/Admin/RoleController.php:8
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#2 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/Admin/RoleController.php on line 8
+[02-Apr-2020 20:14:39 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Model' not found in /home/janus/www/php-w17/app/Models/User.php:5
+Stack trace:
+#0 /home/janus/www/php-w17/app/Controllers/Admin/UserController.php(6): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#3 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#4 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-w17/app/Models/User.php on line 5
+[02-Apr-2020 20:14:50 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Model' not found in /home/janus/www/php-w17/app/Models/User.php:5
+Stack trace:
+#0 /home/janus/www/php-w17/app/Controllers/Admin/UserController.php(8): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#3 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#4 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-w17/app/Models/User.php on line 5
+[02-Apr-2020 20:15:04 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Model' not found in /home/janus/www/php-w17/app/Models/User.php:5
+Stack trace:
+#0 /home/janus/www/php-w17/app/Controllers/Admin/UserController.php(8): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#3 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#4 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-w17/app/Models/User.php on line 5
+[02-Apr-2020 20:15:06 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Model' not found in /home/janus/www/php-w17/app/Models/User.php:5
+Stack trace:
+#0 /home/janus/www/php-w17/app/Controllers/Admin/UserController.php(8): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#3 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#4 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#5 {main}
+  thrown in /home/janus/www/php-w17/app/Models/User.php on line 5
+[02-Apr-2020 20:15:21 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Admin' not found in /home/janus/www/php-w17/app/Controllers/Admin/UserController.php:11
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#2 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/Admin/UserController.php on line 11
+[02-Apr-2020 21:45:56 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Helper' not found in /home/janus/www/php-w17/app/Views/layouts/partials/_nav.php:29
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(11): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/vendor/framework/Controller.php(33): View->render()
+#4 /home/janus/www/php-w17/app/Controllers/HomeController.php(13): Controller->render()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(50): HomeController->index()
+#6 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#7 /home/janus/www/php-w17/bootstrap/app.php(84): Router->direct()
+#8 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#9 {main}
+  thrown in /home/janus/www/php-w17/app/Views/layouts/partials/_nav.php on line 29
+[02-Apr-2020 21:46:38 Europe/Kiev] PHP Notice:  Undefined offset: 404 in /home/janus/www/php-w17/vendor/framework/Router.php on line 23
+[02-Apr-2020 21:46:38 Europe/Kiev] PHP Notice:  Undefined offset: 1 in /home/janus/www/php-w17/vendor/framework/Router.php on line 29
+[02-Apr-2020 21:46:38 Europe/Kiev] PHP Fatal error:  Uncaught Error: Method name must be a string in /home/janus/www/php-w17/vendor/framework/Router.php:50
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(23): Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 50
+[02-Apr-2020 21:47:45 Europe/Kiev] PHP Warning:  Use of undefined constant SESSION_PREFIX - assumed 'SESSION_PREFIX' (this will throw an Error in a future version of PHP) in /home/janus/www/php-w17/vendor/framework/Session.php on line 42
+[02-Apr-2020 21:47:45 Europe/Kiev] PHP Notice:  Undefined variable: path in /home/janus/www/php-w17/app/Views/layouts/auth.php on line 210
+[02-Apr-2020 21:47:45 Europe/Kiev] PHP Warning:  include(/home/janus/www/php-w17/app/Views): failed to open stream: No such file or directory in /home/janus/www/php-w17/app/Views/layouts/auth.php on line 210
+[02-Apr-2020 21:47:45 Europe/Kiev] PHP Warning:  include(): Failed opening '/home/janus/www/php-w17/app/Views/' for inclusion (include_path='.:/usr/share/php') in /home/janus/www/php-w17/app/Views/layouts/auth.php on line 210
+[02-Apr-2020 21:48:37 Europe/Kiev] PHP Notice:  Undefined variable: path in /home/janus/www/php-w17/app/Views/layouts/auth.php on line 210
+[02-Apr-2020 21:48:37 Europe/Kiev] PHP Warning:  include(/home/janus/www/php-w17/app/Views): failed to open stream: Success in /home/janus/www/php-w17/app/Views/layouts/auth.php on line 210
+[02-Apr-2020 21:48:37 Europe/Kiev] PHP Warning:  include(): Failed opening '/home/janus/www/php-w17/app/Views/' for inclusion (include_path='.:/usr/share/php') in /home/janus/www/php-w17/app/Views/layouts/auth.php on line 210
+[02-Apr-2020 21:50:56 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
+[02-Apr-2020 22:28:52 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
+[02-Apr-2020 22:30:54 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
+[02-Apr-2020 22:39:53 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
+[02-Apr-2020 22:41:28 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
