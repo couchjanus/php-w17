@@ -1,6 +1,11 @@
 <?php
-require_once VENDOR.'/framework/View.php';
-require_once VENDOR.'/framework/Response.php';
+// require_once VENDOR.'/framework/View.php';
+// require_once VENDOR.'/framework/Response.php';
+
+namespace Core;
+
+use Core\View;
+use Core\Response;
 
 class Controller
 {

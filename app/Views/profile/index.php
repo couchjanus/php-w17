@@ -14,7 +14,7 @@
 
             <ul class="list-group">
                 <li class="list-group-item text-muted">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2019</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2020</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Your Email</strong></span> <?= $user->email;?></li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Your Cname</strong></span> <?= $user->name;?></li>
             </ul>
@@ -47,7 +47,7 @@
         <div class="col-9 px-3 py-3">
             <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="/profile" role="tab"
                         aria-controls="nav-home" aria-selected="true">Profile</a>
                     <a class="nav-item nav-link" href="/profile/orders">Orders</a>
                     <a class="nav-item nav-link" href="#nav-contact" role="tab"

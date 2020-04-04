@@ -595,3 +595,321 @@ Stack trace:
 [02-Apr-2020 22:30:54 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
 [02-Apr-2020 22:39:53 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
 [02-Apr-2020 22:41:28 Europe/Kiev] PHP Warning:  session_unset() expects exactly 0 parameters, 1 given in /home/janus/www/php-w17/vendor/framework/Session.php on line 59
+[04-Apr-2020 16:43:37 Europe/Kiev] PHP Warning:  Use of undefined constant CORE - assumed 'CORE' (this will throw an Error in a future version of PHP) in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 5
+[04-Apr-2020 16:43:37 Europe/Kiev] PHP Warning:  require_once(CORE/Session.php): failed to open stream: No such file or directory in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 5
+[04-Apr-2020 16:43:37 Europe/Kiev] PHP Fatal error:  require_once(): Failed opening required 'CORE/Session.php' (include_path='.:/usr/share/php') in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 5
+[04-Apr-2020 17:01:57 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to a member function index() on string in /home/janus/www/php-w17/vendor/framework/Router.php:50
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 50
+[04-Apr-2020 17:04:21 Europe/Kiev] PHP Warning:  Use of undefined constant CORE - assumed 'CORE' (this will throw an Error in a future version of PHP) in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 5
+[04-Apr-2020 17:04:21 Europe/Kiev] PHP Warning:  require_once(CORE/Session.php): failed to open stream: No such file or directory in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 5
+[04-Apr-2020 17:04:21 Europe/Kiev] PHP Fatal error:  require_once(): Failed opening required 'CORE/Session.php' (include_path='.:/usr/share/php') in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 5
+[04-Apr-2020 17:06:34 Europe/Kiev] PHP Notice:  Undefined variable: options in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 58
+[04-Apr-2020 17:06:47 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:82
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 82
+[04-Apr-2020 17:11:29 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:82
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 82
+[04-Apr-2020 18:00:46 Europe/Kiev] PHP Notice:  Trying to get property 'id' of non-object in /home/janus/www/php-w17/app/Controllers/ProfileController.php on line 67
+[04-Apr-2020 18:00:48 Europe/Kiev] PHP Notice:  Trying to get property 'email' of non-object in /home/janus/www/php-w17/app/Views/profile/orders.php on line 21
+[04-Apr-2020 18:01:12 Europe/Kiev] PHP Notice:  Trying to get property 'id' of non-object in /home/janus/www/php-w17/app/Controllers/ProfileController.php on line 67
+[04-Apr-2020 18:01:12 Europe/Kiev] PHP Notice:  Trying to get property 'email' of non-object in /home/janus/www/php-w17/app/Views/profile/orders.php on line 21
+[04-Apr-2020 18:23:44 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:82
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 82
+[04-Apr-2020 18:24:23 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:82
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 82
+[04-Apr-2020 18:25:54 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:81
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 81
+[04-Apr-2020 18:26:29 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:81
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 81
+[04-Apr-2020 18:28:49 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:81
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 81
+[04-Apr-2020 18:29:53 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:81
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 81
+[04-Apr-2020 18:32:01 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:81
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): View->render()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#6 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#7 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#8 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 81
+[04-Apr-2020 18:47:48 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined method Helper::getOrderStatus() in /home/janus/www/php-w17/app/Views/profile/orders.php:82
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(14): include()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(38): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(57): View->render_template()
+#3 /home/janus/www/php-w17/vendor/framework/Controller.php(33): View->render()
+#4 /home/janus/www/php-w17/app/Controllers/ProfileController.php(71): Controller->render()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(50): ProfileController->ordersList()
+#6 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#7 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#8 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#9 {main}
+  thrown in /home/janus/www/php-w17/app/Views/profile/orders.php on line 82
+[04-Apr-2020 18:51:10 Europe/Kiev] PHP Parse error:  syntax error, unexpected '"', expecting ';' or ',' in /home/janus/www/php-w17/app/Views/profile/order.php on line 85
+[04-Apr-2020 18:55:53 Europe/Kiev] PHP Notice:  Undefined variable: options in /home/janus/www/php-w17/app/Controllers/OrderController.php on line 58
+[04-Apr-2020 19:20:25 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'App\Controller' not found in /home/janus/www/php-w17/app/Controllers/AboutController.php:6
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#2 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/AboutController.php on line 6
+[04-Apr-2020 19:21:09 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Controller' not found in /home/janus/www/php-w17/app/Controllers/AboutController.php:8
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(41): include_once()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#2 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/AboutController.php on line 8
+[04-Apr-2020 19:24:13 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class '\App\Controllers\AboutController' not found in /home/janus/www/php-w17/vendor/framework/Router.php:63
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(10): Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(85): Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 63
+[04-Apr-2020 19:25:21 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Router' not found in /home/janus/www/php-w17/bootstrap/app.php:84
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 84
+[04-Apr-2020 19:26:22 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:84
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 84
+[04-Apr-2020 19:26:35 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:84
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 84
+[04-Apr-2020 19:27:25 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:84
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 84
+[04-Apr-2020 19:27:58 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:57
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 57
+[04-Apr-2020 19:28:27 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Router' not found in /home/janus/www/php-w17/bootstrap/app.php:57
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 57
+[04-Apr-2020 19:30:14 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'frameworkRouter' not found in /home/janus/www/php-w17/bootstrap/app.php:57
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 57
+[04-Apr-2020 19:30:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:57
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 57
+[04-Apr-2020 19:31:14 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:57
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 57
+[04-Apr-2020 19:31:40 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:58
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 58
+[04-Apr-2020 19:34:47 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Core\Router' not found in /home/janus/www/php-w17/bootstrap/app.php:58
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 58
+[04-Apr-2020 19:36:01 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/janus/www/php-w17/bootstrap/app.php:59
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 59
+[04-Apr-2020 19:36:37 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/janus/www/php-w17/bootstrap/app.php:59
+Stack trace:
+#0 /home/janus/www/php-w17/public/index.php(25): require_once()
+#1 {main}
+  thrown in /home/janus/www/php-w17/bootstrap/app.php on line 59
+[04-Apr-2020 19:37:13 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'framework\Controller' not found in /home/janus/www/php-w17/app/Controllers/AboutController.php:8
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/composer/ClassLoader.php(444): include()
+#1 /home/janus/www/php-w17/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 /home/janus/www/php-w17/vendor/framework/Router.php(64): spl_autoload_call()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#5 /home/janus/www/php-w17/bootstrap/app.php(59): Core\Router->direct()
+#6 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/AboutController.php on line 8
+[04-Apr-2020 19:37:50 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class '\App\Controllers\AboutController' not found in /home/janus/www/php-w17/vendor/framework/Router.php:64
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(59): Core\Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 64
+[04-Apr-2020 19:43:54 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class '\App\Controllers\AboutController' not found in /home/janus/www/php-w17/vendor/framework/Router.php:64
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#1 /home/janus/www/php-w17/bootstrap/app.php(58): Core\Router->direct()
+#2 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#3 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Router.php on line 64
+[04-Apr-2020 19:45:41 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Core\Response' not found in /home/janus/www/php-w17/vendor/framework/Controller.php:32
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(64): Core\Controller->__construct()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#2 /home/janus/www/php-w17/bootstrap/app.php(58): Core\Router->direct()
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Controller.php on line 32
+[04-Apr-2020 19:46:28 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Core\View' not found in /home/janus/www/php-w17/vendor/framework/Controller.php:33
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/framework/Router.php(64): Core\Controller->__construct()
+#1 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#2 /home/janus/www/php-w17/bootstrap/app.php(58): Core\Router->direct()
+#3 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#4 {main}
+  thrown in /home/janus/www/php-w17/vendor/framework/Controller.php on line 33
+[04-Apr-2020 19:46:52 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Helper' not found in /home/janus/www/php-w17/app/Views/layouts/partials/_sidebar.php:26
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(8): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(39): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(58): Core\View->render_template()
+#3 /home/janus/www/php-w17/vendor/framework/Controller.php(38): Core\View->render()
+#4 /home/janus/www/php-w17/app/Controllers/AboutController.php(14): Core\Controller->render()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(70): App\Controllers\AboutController->index()
+#6 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#7 /home/janus/www/php-w17/bootstrap/app.php(58): Core\Router->direct()
+#8 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#9 {main}
+  thrown in /home/janus/www/php-w17/app/Views/layouts/partials/_sidebar.php on line 26
+[04-Apr-2020 19:48:22 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Helper' not found in /home/janus/www/php-w17/app/Views/layouts/partials/_sidebar.php:26
+Stack trace:
+#0 /home/janus/www/php-w17/app/Views/layouts/app.php(8): require_once()
+#1 /home/janus/www/php-w17/vendor/framework/View.php(40): include_once('/home/janus/www...')
+#2 /home/janus/www/php-w17/vendor/framework/View.php(59): Core\View->render_template()
+#3 /home/janus/www/php-w17/vendor/framework/Controller.php(38): Core\View->render()
+#4 /home/janus/www/php-w17/app/Controllers/AboutController.php(14): Core\Controller->render()
+#5 /home/janus/www/php-w17/vendor/framework/Router.php(70): App\Controllers\AboutController->index()
+#6 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#7 /home/janus/www/php-w17/bootstrap/app.php(58): Core\Router->direct()
+#8 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#9 {main}
+  thrown in /home/janus/www/php-w17/app/Views/layouts/partials/_sidebar.php on line 26
+[04-Apr-2020 19:49:15 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Controller' not found in /home/janus/www/php-w17/app/Controllers/HomeController.php:8
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/composer/ClassLoader.php(444): include()
+#1 /home/janus/www/php-w17/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 /home/janus/www/php-w17/vendor/framework/Router.php(64): spl_autoload_call()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#5 /home/janus/www/php-w17/bootstrap/app.php(58): Core\Router->direct()
+#6 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/HomeController.php on line 8
+[04-Apr-2020 19:58:39 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'Controller' not found in /home/janus/www/php-w17/app/Controllers/HomeController.php:8
+Stack trace:
+#0 /home/janus/www/php-w17/vendor/composer/ClassLoader.php(444): include()
+#1 /home/janus/www/php-w17/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 /home/janus/www/php-w17/vendor/framework/Router.php(64): spl_autoload_call()
+#4 /home/janus/www/php-w17/vendor/framework/Router.php(11): Core\Router->init()
+#5 /home/janus/www/php-w17/bootstrap/app.php(83): Core\Router->direct()
+#6 /home/janus/www/php-w17/public/index.php(25): require_once('/home/janus/www...')
+#7 {main}
+  thrown in /home/janus/www/php-w17/app/Controllers/HomeController.php on line 8

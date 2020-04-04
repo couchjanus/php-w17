@@ -8,6 +8,7 @@
  * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
  * @author     Janus Nic <couchjanus@gmail.com>
  */
+namespace Core;
 
 class Response {
 

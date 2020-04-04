@@ -27,23 +27,27 @@ return [
    'admin/users/create' => 'Admin\UserController@create',
    'admin/users/edit/{id}' => 'Admin\UserController@edit',
    'admin/users/delete/{id}' => 'Admin\UserController@delete',
+  
+   'index.php' => 'HomeController@index',
+   '' => 'HomeController@index',
 
-   'register' => 'AuthController@signup',
-   'login' => 'AuthController@signin',
-   'logout' => 'AuthController@logout',
-   'profile' => 'ProfileController@index',
-
-   'profile/orders' => 'ProfileController@ordersList',
-   'profile/orders/view/{id}' => 'ProfileController@ordersView',
-   'profile/orders/edit/{id}' => 'ProfileController@ordersEdit',
-   'profile/orders/delete/{id}' => 'ProfileController@ordersDelete',
 
    'api/shop' => 'HomeController@getProducts',
    'api/shop/{id}' => 'HomeController@getProduct',
    'api/product/{id}' => 'HomeController@getProductItem',
    'api/categories' => 'HomeController@getCategories',
    'api/category/{id}' => 'HomeController@getProductsByCategory',
+   'api/cart' => 'OrderController@cart',
+
+   'register' => 'AuthController@signup',
+   'login' => 'AuthController@signin',
+   'logout' => 'AuthController@logout',
    
-   'index.php' => 'HomeController@index',
-   '' => 'HomeController@index',
+
+   'profile/orders' => 'ProfileController@ordersList',
+   'profile/orders/view/{id}' => 'ProfileController@ordersView',
+   'profile/orders/edit/{id}' => 'ProfileController@ordersEdit',
+   'profile/orders/delete/{id}' => 'ProfileController@ordersDelete',
+   'profile' => 'ProfileController@index',
+   
 ]; 

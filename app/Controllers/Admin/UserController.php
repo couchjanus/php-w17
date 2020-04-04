@@ -3,25 +3,25 @@
  * UserController.php
  * Контроллер для управления users
  */
-require_once VENDOR.'/framework/Controller.php';
+require_once VENDOR.'/framework/Admin.php';
 require_once VENDOR.'/framework/Helper.php';
 require_once MODELS.'/User.php';
 require_once MODELS.'/Role.php';
 
-class UserController extends Controller
+class UserController extends Admin
 {
     private $costs = [
         'cost' => 12,
     ];
 
-    // public function __construct()
-    // {
-    //     parent::__construct();
+    public function __construct()
+    {
+        parent::__construct();
 
-    //     if ($this->isAdmin() !== true) {
-    //         Helper::redirect('/profile');
-    //     }
-    // }
+        if ($this->isAdmin() !== true) {
+            Helper::redirect('/profile');
+        }
+    }
 
     /**
      * Главная страница управления users

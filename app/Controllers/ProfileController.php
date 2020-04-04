@@ -3,7 +3,8 @@
 require_once MODELS.'/User.php';
 require_once VENDOR.'/framework/Session.php';
 require_once VENDOR.'/framework/Controller.php';
-require_once VENDOR.'/framework/Helper.php';
+// require_once VENDOR.'/framework/Helper.php';
+require_once MODELS.'/Order.php';
 
 /**
  * ProfileController.php
@@ -63,12 +64,30 @@ class ProfileController extends Controller
 
     public function ordersList()
     {
-        
+        $orders = Order::getOrdersListByUserId($this->user->id);
+        $title = 'Личный кабинет ';
+        $subtitle = 'Ваши заказы ';
+        $user = $this->user;
+        $this->render('profile/orders', compact('user', 'orders', 'title', 'subtitle'));
     }
 
     public function ordersView($vars)
     {
-        
+        extract($vars);
+        $order = Order::getUserOrderById($id);
+
+        $title = 'Личный кабинет ';
+        $subtitle = 'Ваш заказ #'.$order->id;
+
+        // Преобразуем JSON  строку продуктов и их кол-ва в массив
+        $orders = json_decode(json_decode($order->products, true));
+        $products = [];
+
+        for ($i=0; $i<count($orders); $i++) {
+            array_push($products, (array)$orders[$i]);
+        }
+        $user = $this->user;
+        $this->render('profile/order', compact('user', 'orders', 'order', 'title', 'subtitle', 'products'));
     }
 
 }

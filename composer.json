@@ -1,0 +1,20 @@
+{
+    "name": "janus/php-w17",
+    "description": "My franework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "couch Janus",
+            "email": "couchjanus@gmail.com"
+        }
+    ],
+
+    "autoload": {
+		"psr-4": {
+            "App\\": "app",
+            "Core\\": "vendor/framework"
+		}
+	},
+    "minimum-stability": "beta",
+    "require": {}
+}

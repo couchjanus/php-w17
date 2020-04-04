@@ -1,4 +1,5 @@
 <?php
+require realpath(__DIR__).'/../vendor/autoload.php'; //this autoloads everything
 
 require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config').DIRECTORY_SEPARATOR.'app.php';
 
@@ -48,38 +49,35 @@ function conf($mix) {
 setErrorLogging();
 init();
 
-// coockies
+// spl_autoload_register(function($class) {
+// 	$file = CORE."/".$class.EXT;
+// 	if(is_file($file)) {
+// 		require_once $file;
+// 	}
+	
+// 	// $filename = MODELS . $class . EXT;
 
-// setcookie("name", 'Anonymouse');
-// setcookie("TestCookie", $value, time()+3600);  /* срок действия 1 час */
+// 	// if (file_exists($filename)) {
+// 	// 	include_once $filename;
+// 	// }
+// });
 
-// Вывести одно конкретное значение cookie
-// echo $_COOKIE["name"];
+// spl_autoload_register(function($class) {
+// 	$file = ROOT.'/'.str_replace('\\', '/', $class).'.php';
+// 	var_dump($file);
+// 	if(is_file($file)) {
+// 		require_once $file;
+// 	}
+// });
 
-// echo 'Привет, ' . htmlspecialchars($_COOKIE["name"]) . '!';
-// Вывод всех cookie
-// print_r($_COOKIE);
+// use core\App;
 
+// $app = new App();
+// $app->init();
 
-// setcookie("TestCookie", $value, time()+3600, "/~rasmus/", "example.com", 1);
-
-// Calculate 60 days in the future
-// seconds * minutes * hours * days + current time
-
-// $inTwoMonths = 60 * 60 * 24 * 60 + time(); 
-// setcookie('lastVisit', date("G:i - m/d/y"), $inTwoMonths);
-
-// if(isset($_COOKIE['lastVisit'])) {
-//     $visit = $_COOKIE['lastVisit'];
-//     echo "Your last visit was - ". $visit;
-// } else
-// 	echo "You've got some stale cookies!";
-
-
-// echo session_name();
 require_once VENDOR.'/framework/Helper.php';
-require_once VENDOR.'/framework/Request.php';
-require_once VENDOR.'/framework/Router.php';
+// require_once VENDOR.'/framework/Request.php';
+// require_once VENDOR.'/framework/Router.php';
 
-$router = new Router();
-$router->direct(Request::uri());
+$router = new \Core\Router();
+$router->direct(\Core\Request::uri());

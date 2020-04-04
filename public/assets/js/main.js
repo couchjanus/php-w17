@@ -169,6 +169,7 @@ function carousel(dataItem) {
 
 
 function makeProductItem($template, product) {
+    
     var pictures = product.picture.split(",");
     $template.querySelector('.col-md-4').setAttribute('productId', product.id);
     $template.querySelector('.product-name').textContent = product.name;
@@ -275,137 +276,173 @@ function minusProduct(id) {
 }
 
 
-const url = '/api/shop';
+function addProduct(prod) {
+    let tmpProducts = getProducts();
+    if (tmpProducts.length > 0) {
+        let exist = tmpProducts.some(elem => {
+            return elem.id === prod.id;
+        });
+        if (exist) {
+            tmpProducts.forEach(elem => {
+                if (elem.id === prod.id) {
+                    elem.amount += 1;
+                }
+            })
+        } else {
+            tmpProducts.push(new Product(prod.id, prod.name, prod.price, prod.picture.split(",")[0], 1));
+        }
+    } else {
+        tmpProducts.push(new Product(prod.id, prod.name, prod.price, prod.picture.split(",")[0], 1));
+    }
+    window.localStorage.setItem("basket", JSON.stringify(tmpProducts));
+}
 
-(function () {
 
-    el('#sidebarCollapse').addEventListener('click', () => openCart());
-    el('.dismiss').addEventListener('click', () => closeCart());
-    el('.overlay').addEventListener('click', () => closeCart());
-
+function makeShowcase(data) {
+    el('.showcase').innerHTML = '';
     const template = el('#productItem').content;
-    const content = el('#cartItem').content;
+    data.forEach(function (e) {
+        el('.showcase').append(makeProductItem(template, e).cloneNode(true));
+    });
+}
 
-    // ---------------------Step 1-----------------------------------
+function productPlusMinus(id, sign) {
+    let tmpProducts = getProducts();
+    tmpProducts.forEach(elem => {
+        if (elem.id == id) {
+            if (sign == '-') {
+                elem.amount -= 1;
+            } else if (sign == '+') {
+                elem.amount += 1;
+            }
+        }
+    });
+    window.localStorage.setItem("basket", JSON.stringify(tmpProducts));
+}
+
+function renderCartItem(e) {
+    let id = e.closest('.cart-item').getAttribute('id');
+    if (e.matches('.remove-item')) {
+        removeProduct(id);
+        e.parentNode.parentNode.remove();
+    } else {
+        let price = parseFloat(e.closest('.cart-item').querySelector('.item-price').getAttribute('price'));
+        let val = parseInt(e.closest('.cart-item').querySelector('.quontity').innerText);
+
+        if (e.matches('.plus')) {
+            productPlusMinus(id, '+')
+            val = e.previousElementSibling.innerText = val + 1;
+        }
+        if (e.matches('.minus')) {
+            if (val > 1) {
+                productPlusMinus(id, '-')
+                val = e.nextElementSibling.innerText = val - 1;
+            }
+        }
+        e.parentNode.nextElementSibling.querySelector('.item-price').innerText = parseFloat(price * val).toFixed(2);
+    }
+    changeTotal();
+}
+
+function initProducts(url = "/api/shop") {
     fetch(url)
         .then(function (response) {
             if (response.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' + response.status);
                 return;
             }
+
             response.json().then(function (data) {
 
-                // Make Product Item
-                data.forEach((item) => {
-                    el('.showcase').append(makeProductItem(template, item).cloneNode(true));
-                });
+                makeShowcase(data);
 
-                initStorage();
+                    const content = el('#cartItem').content;
+                    let addToCarts = document.querySelectorAll('.add-to-cart');
+                    addToCarts.forEach(function (addToCart) {
+                        addToCart.addEventListener('click', function () {
+                            let id = this.closest('.col-md-4')
+                                .getAttribute('productId');
 
+                            fetch('/api/shop/' + id).then(response => {
+                                response.json().then(data => {
+                                    addProduct(getProduct(data));
+                                });
+                            });
 
-                // ---------------------add-to-cart------------------------------
-
-                let addToCarts = document.querySelectorAll('.add-to-cart');
-
-                addToCarts.forEach(function (addToCart) {
-                    addToCart.addEventListener('click', function () {
-
-                        let id = this.closest('.col-md-4').getAttribute('productId');
-                        let dataItem = data[0];
-
-                        // console.log(data[0]);
-                        // console.log(product);
-                        // создадим объект
-                        let product = getProduct(dataItem);
-                        console.log(product);
-                        saveCartToStore(product);
-                        
-
-                        let imgItem = this.closest('.card').querySelector('img');
-                        let win = this.closest('.card').querySelector('.win');
-                        moveToCart(imgItem, win);
-
-                    });
-                });
-
-
-                document.querySelector('.cart-items').addEventListener(
-                    'click',
-                    function (e) {
-                        if (e.target && e.target.matches('.remove-item')) {
-                            let index = e.target.closest('.cart-item').getAttribute('id');
-                            removeProduct(index);
-                            e.target.parentNode.parentNode.remove();
-                            changeTotal();
-                        }
-
-                        if (e.target && e.target.matches('.plus')) {
-                            let el = e.target;
-                            let price = parseFloat(
-                                el.parentNode.nextElementSibling
-                                .querySelector('.item-price')
-                                .getAttribute('price')
-                            );
-
-                            let id = el.closest('.cart-item').getAttribute('id');
-                            plusProduct(id);
-                            let val = parseInt(el.previousElementSibling.innerText);
-                            val++;
-                            el.previousElementSibling.innerText = val;
-
-                            el.parentNode.nextElementSibling.querySelector(
-                                '.item-price'
-                            ).innerText = parseFloat(price * val).toFixed(2);
-                            changeTotal();
-
-                        }
-
-                        if (e.target && e.target.matches('.minus')) {
-                            let el = e.target;
-                            let price = parseFloat(
-                                el.parentNode.nextElementSibling
-                                .querySelector('.item-price')
-                                .getAttribute('price')
-                            );
-
-                            let id = el.closest('.cart-item').getAttribute('id');
-                            let val = parseInt(el.nextElementSibling.innerText);
-                            if (val > 1) {
-                                val--;
-                                el.nextElementSibling.innerText = val;
-                                minusProduct(id);
+                            let imgItem = this.closest('.card').querySelector('img');
+                            let win = this.closest('.card').querySelector('.win');
+                            if (imgItem) {
+                                let imgClone = imgItem.cloneNode(true);
+                                imgClone.classList.add('offset-img');
+                                document.body.appendChild(imgClone);
+                                imgItem.style.transform = 'rotateY(180deg)';
+                                win.style.display = 'block';
+                                imgClone.animate([{
+                                            transform: _translate(imgItem)
+                                        },
+                                        {
+                                            transform: _translate(document.querySelector('#sidebarCollapse'), 50) + 'perspective(500px) scale3d(0.1, 0.1, 0.2)'
+                                        },
+                                    ], {
+                                        duration: 2000,
+                                    })
+                                    .onfinish = function () {
+                                        imgClone.remove();
+                                        imgItem.style.transform = 'rotateY(0deg)';
+                                        win.style.display = 'none';
+                                    };
                             }
-
-                            el.parentNode.nextElementSibling.querySelector(
-                                '.item-price'
-                            ).innerText = parseFloat(price * val).toFixed(2);
-                            changeTotal();
-
-                        }
-                    },
-                    false
-                );
-
-                // =================Очистка всего хранилища================
-                document.querySelector('.clear-cart').addEventListener('click', () => {
-                    localStorage.removeItem('basket');
-                    initStorage();
-                    document.querySelector('.cart-items').innerHTML = '';
-                    updateTotal();
-                });
-
-
-                // ----------------------view-detail------------------------------
-                const viewDetails = document.querySelectorAll('.view-detail');
-                viewDetails.forEach(function (element) {
-                    element.addEventListener('click', function () {
-                        let dataId = this.closest('.col-md-4').getAttribute('productId');
-                        carousel(data[dataId]);
+                        });
                     });
+
+                    el('.cart-items').addEventListener('click', function (e) {
+                        renderCartItem(e.target)
+                    }, false);
+                    return data;
+                })
+                .catch(function (err) {
+                    console.log('Fetch Error :-S', err);
                 });
-            });
-        })
-        .catch(function (err) {
-            console.log('Fetch Error :-S', err);
         });
+}
+
+const url = '/api/shop';
+
+(function () {
+    initStorage();
+    el('#sidebarCollapse').addEventListener('click', () => openCart());
+    el('.dismiss').addEventListener('click', () => closeCart());
+    el('.overlay').addEventListener('click', () => closeCart());
+
+    initProducts(url);
+
+    // checkout__now
+    if (el(".checkout__now")) {
+    el(".checkout__now").addEventListener("click", () => {
+        closeCart();
+        if (localStorage.basket && localStorage.basket.length > 2) {
+            let cart = getProducts();
+            fetch("/api/cart", {
+                method: "POST", // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    cart: cart,
+                })
+            })
+            .then(function(response) {
+                console.log("Request success: ", response);
+                localStorage.removeItem("basket");
+                document.querySelector(".cart-items").innerHTML = "";
+                updateTotal();
+                document.location.replace("/profile");
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+        }
+    });
+}
+
 })();

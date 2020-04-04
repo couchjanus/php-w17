@@ -20,8 +20,13 @@
     <div class="overlay"></div>
     <?php require_once VIEWS.'/layouts/partials/_templates.php'; ?>
 
-
+    <script src="/assets/vendor/jquery/jquery-3.4.1.min.js"></script> 
+    <script src="/assets/vendor/popper/popper.min.js"></script> 
+    <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/feather.min.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
     <script src="/assets/js/main.js"></script>
+
 </body>
 
 </html>

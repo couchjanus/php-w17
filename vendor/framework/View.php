@@ -1,5 +1,7 @@
 <?php
+namespace Core;
 
+use Core\Controller;
 /**
  * The view class.
  *
@@ -9,7 +11,7 @@
  * @author     Janus Nic <couchjanus@gmail.com>
  */
 
-require_once VENDOR.'/framework/Controller.php';
+// require_once VENDOR.'/framework/Controller.php';
 
 class View {
     /**

@@ -27,7 +27,7 @@ class Product extends Model
 
     public static function getBySlug($id)
     {
-        $sql = "SELECT t1.*, t2.filename as picture, t2.resource_id  as resource_id FROM products t1 JOIN pictures t2 ON t2.resource = 'products' AND t1.id = t2.resource_id WHERE t1.id = :id";
+        $sql = "SELECT t1.*, t2.filename as picture, t2.resource_id as resource_id FROM products t1 JOIN pictures t2 ON t2.resource = 'products' AND t1.id = t2.resource_id WHERE t1.id = :id";
         $db = Connection::connect();
         $stmt = $db->getPreparedStatment($sql);
         $stmt->bindParam(':id', $id);

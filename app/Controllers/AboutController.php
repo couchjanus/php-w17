@@ -1,6 +1,11 @@
 <?php
 // AboutController.php
-require_once VENDOR.'/framework/Controller.php';
+// require_once VENDOR.'/framework/Controller.php';
+
+namespace App\Controllers;
+
+use Core\Controller;
+
 class AboutController extends Controller
 {
    public function index()

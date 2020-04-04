@@ -38,9 +38,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Social Media</div>
                 <div class="panel-body">
-                    <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i
-                        class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i
-                        class="fa fa-google-plus fa-2x"></i>
+                    <i class="fab fa-facebook fa-2x"></i> <i class="fab fa-github fa-2x"></i> <i
+                        class="fab fa-twitter fa-2x"></i> <i class="fab fa-pinterest fa-2x"></i> <i
+                        class="fab fa-google-plus fa-2x"></i>
                 </div>
             </div>
 
@@ -82,7 +82,7 @@
                                     echo "<a href=/catalog/".$product['id'].">".$product['name']."</a></br>";
                                     echo "<span>Кол-во: </span>" . $product['amount'].'</br>';
                                     echo '<span>Цена: </span>' . $product['price']. ' грн</br>';
-                                    echo '<img src="/' . $product['picture']. '"></br>';
+                                    echo '<img src="'. $product['picture']. '"></br>';
                                     //подсчитываем сумму по каждому товару и пишем в массив
                                     $arr[] = $product['price'] * $product['amount'];
 
